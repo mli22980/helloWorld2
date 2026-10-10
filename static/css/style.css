@@ -1,0 +1,78 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #222222;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* Class rule used for the main page title */
+.page-title {
+    text-align: center;
+    color: #b00020;
+}
+
+/* Logo dimensions are controlled through CSS instead of HTML */
+img.logo {
+    width: 300px;
+    height: 100px;
+    display: block;
+    margin: 0 auto 25px auto;
+}
+
+/* Styles every paragraph on the page */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+/* Styles every level-two heading */
+h2 {
+    color: #b00020;
+    border-bottom: 2px solid #cccccc;
+    padding-bottom: 5px;
+}
+
+/* Special styling for the third paragraph using its ID */
+#third-paragraph {
+    background-color: #ffffff;
+    padding: 15px;
+    border-left: 4px solid #b00020;
+}
+
+/* Table styling */
+table {
+    border-collapse: collapse;
+    border: 2px solid #555555;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 1px solid #555555;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #dddddd;
+}
+
+/* List styling */
+ul,
+ol {
+    line-height: 1.7;
+}
+
+/* Link styling */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
