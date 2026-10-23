@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}BMGT407{% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+</head>
+
+<body class="bg-light">
+
+    <!-- Navigation Bar -->
+    <header class="bg-primary text-white py-3 shadow-sm">
+        <div class="container d-flex flex-wrap
+                    justify-content-between align-items-center gap-3">
+
+            <span class="fs-4 fw-bold">Matthew Li | BMGT407</span>
+
+            <nav aria-label="Main navigation">
+                <a href="{{ url_for('favorite_course') }}"
+                   class="text-white me-3">
+                    Favorite Course
+                </a>
+
+                <a href="{{ url_for('contact') }}"
+                   class="text-white">
+                    Contact
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-secondary py-4">
+        <small>BMGT407 | Matthew Li | 2026</small>
+    </footer>
+
+</body>
+</html>

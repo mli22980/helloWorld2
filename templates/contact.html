@@ -1,0 +1,118 @@
+
+{% extends "base.html" %}
+
+{% block title %}Contact | Matthew Li{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-5">
+
+                <h1 class="text-primary mb-3">Contact Me</h1>
+
+                {% if submitted %}
+
+                <!-- Thank You Message -->
+                <div class="alert alert-success">
+                    <h2 class="h4">Thank You!</h2>
+                    <p>
+                        Thank you, {{ first_name }}!
+                        Your form has been submitted.
+                    </p>
+                </div>
+
+                <h2 class="h5 mt-4">Your Submitted Information</h2>
+
+                <ul class="list-group mb-4">
+                    <li class="list-group-item">
+                        <strong>First Name:</strong> {{ first_name }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Last Name:</strong> {{ last_name }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Email Address:</strong> {{ email }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Message:</strong> {{ message }}
+                    </li>
+                </ul>
+
+                <a href="{{ url_for('contact') }}"
+                   class="btn btn-primary">
+                    Submit Another Response
+                </a>
+
+                {% else %}
+
+                <!-- Contact Form -->
+                <p class="text-muted">
+                    Fill out the form below to contact me.
+                </p>
+
+                <form action="{{ url_for('contact') }}"
+                      method="post">
+
+                    <div class="mb-3">
+                        <label for="first_name" class="form-label">
+                            First Name
+                        </label>
+                        <input type="text"
+                               class="form-control"
+                               id="first_name"
+                               name="first_name"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="last_name" class="form-label">
+                            Last Name
+                        </label>
+                        <input type="text"
+                               class="form-control"
+                               id="last_name"
+                               name="last_name"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">
+                            Email Address
+                        </label>
+                        <input type="email"
+                               class="form-control"
+                               id="email"
+                               name="email"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label">
+                            Message
+                        </label>
+                        <textarea class="form-control"
+                                  id="message"
+                                  name="message"
+                                  rows="4"
+                                  required></textarea>
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-primary">
+                        Submit Form
+                    </button>
+
+                </form>
+
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
